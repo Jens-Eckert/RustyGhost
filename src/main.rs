@@ -1,3 +1,5 @@
+#![allow(nonstandard_style)]
+
 use std::collections::HashMap;
 
 use BungieTypes::*;
@@ -5,8 +7,7 @@ use gloo_console::log;
 use gloo_net::http::Request;
 use load_dotenv::load_dotenv;
 use serde::{Deserialize, Serialize};
-use wasm_bindgen::JsValue;
-use yew::{html::IntoPropValue, prelude::*};
+use yew::prelude::*;
 
 pub mod BungieTypes;
 

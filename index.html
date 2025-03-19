@@ -3,8 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <title>RustyGhost</title>
-        <link rel="css" href="index.css" />
+        <link data-trunk rel="css" href="index.css" />
+        <base data-trunk-public-url />
     </head>
     <body>
+        <link data-trunk rel="rust" href="Cargo.toml" data-wasm-opt="z" data-bin="rusty_ghost" data-initializer="src/initializer.mjs" /> 
     </body>
 </html>
