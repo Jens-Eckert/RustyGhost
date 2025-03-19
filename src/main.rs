@@ -39,39 +39,11 @@ impl AppGlobalData {
 fn App() -> Html {
     let mut app_data = AppGlobalData::init();
 
-    let manifest = use_state(|| Destiny2Manifest::default());
-
-    {
-        let manifest = manifest.clone();
-        let mut app_data = app_data.clone();
-
-        use_effect_with((), move |_| {
-            let req = API_ROOT.to_string() + "/Destiny2/Manifest";
-
-            let manifest = manifest.clone();
-            let mut app_data = app_data.clone();
-
-            wasm_bindgen_futures::spawn_local(async move {
-                let response: GenericResponse<Destiny2Manifest> = Request::get(&req)
-                    .header("X-API-Key", &app_data.api_key)
-                    .send()
-                    .await
-                    .unwrap()
-                    .json()
-                    .await
-                    .unwrap();
-
-                app_data.manifest = response.Response.unwrap();
-                manifest.set(app_data.manifest);
-            });
-
-            || ()
-        });
-    }
-
     html! {
-        <div class="flex flex-col items-center">
-            <p>{format!("{:?}", *manifest)}</p>
+        <div class="flex flex-col items-center h-screen w-full">
+            <div class="flex flex-row items-center h-full">
+            <p>{"Under construction!"}</p>
+            </div>
         </div>
     }
 }
