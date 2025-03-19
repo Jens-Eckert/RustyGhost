@@ -70,7 +70,7 @@ fn App() -> Html {
     }
 
     html! {
-        <div>
+        <div class="flex flex-col items-center">
             <p>{format!("{:?}", *manifest)}</p>
         </div>
     }
