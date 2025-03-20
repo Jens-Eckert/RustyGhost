@@ -2,7 +2,7 @@ use std::collections::HashMap;
 
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Default, Serialize, Deserialize, Clone)]
+#[derive(Debug, Default, Serialize, Deserialize, Clone, PartialEq)]
 pub struct GenericResponse<T: Clone> {
     pub Response: Option<T>,
     pub ErrorCode: i32,
@@ -13,7 +13,7 @@ pub struct GenericResponse<T: Clone> {
     pub DetailedErrorTrace: Option<String>,
 }
 
-#[derive(Debug, Default, Serialize, Deserialize, Clone)]
+#[derive(Debug, Default, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Destiny2Manifest {
     pub version: String,
     pub mobileAssetContentPath: String,
@@ -26,13 +26,13 @@ pub struct Destiny2Manifest {
     pub iconImagePyramidInfo: Vec<Destiny2ConfigImagePyramidEntry>,
 }
 
-#[derive(Debug, Default, Serialize, Deserialize, Clone)]
+#[derive(Debug, Default, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Destiny2ConfigGearAssetDataBaseDefinition {
     pub version: i32,
     pub path: String,
 }
 
-#[derive(Debug, Default, Serialize, Deserialize, Clone)]
+#[derive(Debug, Default, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Destiny2ConfigImagePyramidEntry {
     pub name: String,
     pub factor: f32,
